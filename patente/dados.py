@@ -24,14 +24,13 @@ for despachos in root.findall('despacho'):
             numero_patente = patentes.find('numero').text
             data_deposito = patentes.find('data-deposito').text
             titulo_patente = patentes.find('titulo').text
-            print(f'Número: {numero_patente}')
-            print(f'Depósito: {data_deposito}')
+            print(f'Processo: {numero_patente} de {data_deposito}')
             print(f'Título: {titulo_patente}')
             for titulares in patentes.findall('titular-lista'):
                 nome_titular = [titular.find('nome-completo').text for titular in titulares.findall('titular')]
-                nomes_titular = ', '.join(nome_titular)
+                nomes_titular = '; '.join(nome_titular)
                 quantidade_titular = [titular.get('sequencia') for titular in titulares.findall('titular')]
                 if len(quantidade_titular) > 1:
-                    print(f'Titular(s): {nomes_titular}')
+                    print(f'Titulares: {nomes_titular}\n')
                 else:
-                    print(f'Titular: {nomes_titular}')
+                    print(f'Titular: {nomes_titular}\n')
