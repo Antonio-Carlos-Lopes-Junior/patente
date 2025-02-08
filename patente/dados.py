@@ -12,7 +12,7 @@ numero_revista = root.attrib['numero']
 dataPublicacao = root.attrib['dataPublicacao']
 
 # Exibindo os valores
-print('Revista: {numero_revista}')
+print(f'Revista: {numero_revista}')
 print(f'Data de Publicação: {dataPublicacao}')
 
 # Extraindo o valor do despacho
